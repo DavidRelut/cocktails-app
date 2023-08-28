@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Button, Card, Stack, Typography } from "@mui/material";
 
 interface ICocktailCardProps {
@@ -8,7 +8,7 @@ interface ICocktailCardProps {
   image: string;
 }
 
-const CocktailCard: FC<ICocktailCardProps> = ({
+const CocktailCard: React.FC<ICocktailCardProps> = ({
   name,
   ingredients,
   instructions,

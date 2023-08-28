@@ -1,10 +1,10 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Stack, Typography } from "@mui/material";
 // import CocktailCard from "../../../../reusable-ui/CocktailCard";
 // import { useAppSelector } from "../../redux/hooks";
 // import { Cocktails } from "../../redux/slices/cocktails/cocktailTypes";
 
-const FavoriteList: FC = () => {
+const FavoriteList: React.FC = () => {
   const showIngredientList = (): void => {
     // TODO: Fill the function
   };

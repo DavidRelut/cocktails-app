@@ -1,10 +1,10 @@
 import { Stack, Tab, Tabs, Typography } from "@mui/material";
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import { getTabSelected, tabsConfig } from "../../../utils/tabsConfig";
 import { ETabs } from "../../../enums/enums";
 import { ITab } from "../../../interfaces/interfaces";
 
-const MainPage: FC = () => {
+const MainPage: React.FC = () => {
   // STATE
   const [currentTabSelected, setCurrentTabSelected] = useState(
     ETabs.DEFAULT_TAB_INDEX

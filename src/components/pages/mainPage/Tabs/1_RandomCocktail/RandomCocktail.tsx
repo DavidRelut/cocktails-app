@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { Button, Stack, Typography } from "@mui/material";
 import CocktailCard from "../../../../reusable-ui/CocktailCard";
 import { useAppDispatch, useAppSelector } from "../../../../../redux/hooks";
@@ -6,7 +6,7 @@ import { selectCocktail } from "../../../../../redux/slices/cocktail/cocktailSli
 import { fetchRandomCocktail } from "../../../../../redux/slices/cocktail/cocktailActions";
 import { ICocktail } from "../../../../../redux/slices/cocktail/cocktailTypes";
 
-const RandomCocktail: FC = () => {
+const RandomCocktail: React.FC = () => {
   // STATE
   const { cocktail } = useAppSelector(selectCocktail);
 

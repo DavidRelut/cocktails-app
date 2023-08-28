@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -12,7 +12,7 @@ import {
 // import CocktailCard from "../../reusable-ui/CocktailCard";
 // import { useAppSelector } from "../../../redux/hooks";
 
-const FindCocktail: FC = () => {
+const FindCocktail: React.FC = () => {
   // STATE
   const [ingredients, setIngredients] = useState(null);
 
