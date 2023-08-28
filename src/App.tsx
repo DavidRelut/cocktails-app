@@ -1,8 +1,7 @@
-import "./App.css";
-import { FC } from "react";
+import React from "react";
 import MainPage from "./components/pages/mainPage/MainPage";
 
-const App: FC = () => {
+const App: React.FC = () => {
   return <MainPage />;
 };
 

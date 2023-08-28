@@ -1,20 +1,22 @@
 import { Stack, Tab, Tabs, Typography } from "@mui/material";
-import { FC, useState } from "react";
-// import FavoriteList from "./components/3_FavoriteList";
-
-// import { selectCocktail } from "../../../redux/slices/cocktail/cocktailSlice";
-// import { useAppSelector } from "../../../redux/hooks";
-import RandomCocktail from "./Tabs/1_RandomCocktail/RandomCocktail";
-import FindCocktail from "./Tabs/2_FindCocktail/FindCocktail";
+import React, { FC, useState } from "react";
+import { getTabSelected, tabsConfig } from "../../../utils/tabsConfig";
+import { ETabs } from "../../../enums/enums";
+import { ITab } from "../../../interfaces/interfaces";
 
 const MainPage: FC = () => {
   // STATE
-  const [tabValue, setTabValue] = useState<number>(0);
+  const [currentTabSelected, setCurrentTabSelected] = useState(
+    ETabs.DEFAULT_TAB_INDEX
+  );
 
   // BEHAVIOR
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setTabValue(newValue);
+  const selectedTab = (_event: React.SyntheticEvent, tabSelected: number) => {
+    setCurrentTabSelected(tabSelected);
   };
+
+  const tabs: ITab[] = tabsConfig();
+  const tabSelected: ITab = getTabSelected(tabs, currentTabSelected);
 
   // UI
   return (
@@ -22,18 +24,14 @@ const MainPage: FC = () => {
       <Typography variant="h4">
         Bienvenue dans la fabrique de Cocktails!
       </Typography>
-      <Tabs value={tabValue} onChange={handleChange} centered>
-        <Tab label="Cocktail au hasard" value={0} />
-        <Tab label="Trouver un cocktail" value={1} />
-        <Tab label="Voir la liste" value={2} />
+
+      <Tabs value={currentTabSelected} onChange={selectedTab} centered>
+        {tabs.map((tab) => (
+          <Tab label={tab.label} value={tab.index} key={tab.index} />
+        ))}
       </Tabs>
-      {tabValue === 0 ? (
-        <RandomCocktail />
-      ) : tabValue === 1 ? (
-        <FindCocktail />
-      ) : (
-        <>TODO: My list of favorite cocktails</>
-      )}
+
+      {tabSelected && <tabSelected.Content />}
     </Stack>
   );
 };

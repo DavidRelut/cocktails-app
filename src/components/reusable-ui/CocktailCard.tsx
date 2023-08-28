@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Button, Card, Stack, Typography } from "@mui/material";
 
 interface ICocktailCardProps {

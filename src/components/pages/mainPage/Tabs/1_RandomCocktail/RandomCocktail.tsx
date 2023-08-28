@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import { Button, Stack, Typography } from "@mui/material";
 import CocktailCard from "../../../../reusable-ui/CocktailCard";
 import { useAppDispatch, useAppSelector } from "../../../../../redux/hooks";
