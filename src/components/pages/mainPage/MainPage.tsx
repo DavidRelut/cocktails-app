@@ -4,14 +4,12 @@ import {
   getTabSelected,
   tabsConfig,
 } from "../../../utils/config/tabsConfig.util";
-import { ETabs } from "../../../enums/enums";
+import { ETab } from "../../../enums/enums";
 import { ITab } from "../../../interfaces/interfaces";
 
 const MainPage: React.FC = () => {
   // STATE
-  const [currentTabSelected, setCurrentTabSelected] = useState(
-    ETabs.DEFAULT_TAB_INDEX
-  );
+  const [currentTabSelected, setCurrentTabSelected] = useState(ETab.INDEX);
 
   // STOCK DATA AND REFERENCE
   const tabs: ITab[] = tabsConfig;

@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../../../redux/hooks";
 import { selectCocktail } from "../../../../../redux/slices/cocktail/cocktailSlice";
 import { fetchRandomCocktail } from "../../../../../redux/slices/cocktail/cocktailActions";
 import { ICocktail } from "../../../../../redux/slices/cocktail/cocktailTypes";
+import { ECocktail } from "../../../../../enums/enums";
 
 const RandomCocktail: React.FC = () => {
   // STATE
@@ -13,7 +14,7 @@ const RandomCocktail: React.FC = () => {
   const dispatch = useAppDispatch();
 
   // STOCK DATA AND REFERENCE
-  const cocktailData: ICocktail = cocktail?.[0];
+  const cocktailData: ICocktail = cocktail?.[ECocktail.INDEX];
 
   // BEHAVIOR
   const handleClick = () => {
