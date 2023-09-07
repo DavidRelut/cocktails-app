@@ -1,17 +1,14 @@
 export interface ICocktail {
-  idDrink: string;
-  strDrink: string;
-  strInstructions: string;
-  strDrinkThumb: string; // url of the cocktail image
-  strIngredient1: string;
-  strIngredient2: string;
-  strIngredient3: string;
-  strIngredient4: string;
-  strIngredient5: string;
+  id: string; // ✔️ → get idDrink from ICocktailModel
+  name: string; // ✔️ → get strDrink from ICocktailModel
+  alcoholic: string; // ✔️ → get strAlcoholic from ICocktailModel
+  instructions: string; // ✔️ → get strInstructions from ICocktailModel
+  thumb: string; // ✔️ → get strDrinkThumb from ICocktailModel (url of the cocktail image)
+  ingredients: Array<string>; // ✔️ → get 5 strIngredient${i} from ICocktailModel
 }
 
 export interface ICocktailState {
   cocktail: ICocktail[];
-  loading: boolean;
+  status: "idle" | "loading" | "failed";
   error: string | null;
 }

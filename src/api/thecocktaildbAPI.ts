@@ -8,5 +8,5 @@ const axiosInstance = axios.create({
 
 export const getRandomCocktail = async (): Promise<ICocktailListModel> => {
   const response = await axiosInstance.get("random.php");
-  return response.data?.drinks;
+  return response.data;
 };

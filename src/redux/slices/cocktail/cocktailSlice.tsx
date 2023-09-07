@@ -1,16 +1,14 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { ICocktailState } from "./cocktailTypes";
 import { fetchRandomCocktail } from "./cocktailActions";
 import { TRootState } from "../../types";
 
-// Initial state
 const initialState: ICocktailState = {
   cocktail: [],
-  loading: false,
+  status: "idle",
   error: null,
 };
 
-// Cocktails Slice definition
 const cocktailSlice = createSlice({
   name: "cocktail",
   initialState,
@@ -18,18 +16,16 @@ const cocktailSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchRandomCocktail.pending, (state) => {
-        state.loading = true;
+        state.status = "idle";
         state.error = null;
       })
-      .addCase(fetchRandomCocktail.fulfilled, (state, action) => {
-        const { payload } = action;
-        state.loading = false;
-        state.cocktail = payload;
+      .addCase(fetchRandomCocktail.fulfilled, (state, { payload }) => {
+        state.status = "loading";
+        state.cocktail = payload || [];
       })
-      .addCase(fetchRandomCocktail.rejected, (state, action) => {
-        const { message } = action.error;
-        state.loading = true;
-        state.error = message || "An error occured";
+      .addCase(fetchRandomCocktail.rejected, (state, { error }) => {
+        state.status = "failed";
+        state.error = error.message || "An error occured";
       });
   },
 });

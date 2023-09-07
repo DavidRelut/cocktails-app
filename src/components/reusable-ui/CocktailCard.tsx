@@ -15,7 +15,7 @@ const CocktailCard: React.FC<ICocktailCardProps> = ({
   image,
 }) => {
   return (
-    <Card style={{ padding: "10px", maxWidth: "400px" }}>
+    <Card style={{ padding: "10px", maxWidth: "400px", textAlign: "center" }}>
       <Stack direction={"column"} alignItems="center" spacing={4}>
         <Stack alignItems="center" spacing={1}>
           <Typography variant="h5">{name}</Typography>

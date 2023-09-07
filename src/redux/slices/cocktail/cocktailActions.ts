@@ -1,11 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getRandomCocktail } from "../../../api/thecocktaildbAPI";
-import { ICocktailListModel } from "../../../api/models";
+import { ICocktail } from "./cocktailTypes";
+import { ICocktailModel } from "../../../api/models";
+import { convertModelToCocktailType } from "../../../utils/object.util";
 
-export const fetchRandomCocktail = createAsyncThunk<ICocktailListModel>(
+export const fetchRandomCocktail = createAsyncThunk(
   "cocktail/fetchRandomCocktail",
   async () => {
     const response = await getRandomCocktail();
-    return response;
+    const cocktails: ICocktail[] = response.drinks.map(
+      (cocktail: ICocktailModel) => convertModelToCocktailType(cocktail)
+    );
+    return cocktails;
   }
 );

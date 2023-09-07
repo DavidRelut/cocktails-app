@@ -14,13 +14,6 @@ const RandomCocktail: React.FC = () => {
 
   // STOCK DATA AND REFERENCE
   const cocktailData: ICocktail = cocktail?.[0];
-  const ingredients: string[] = [
-    cocktailData?.strIngredient1,
-    cocktailData?.strIngredient2,
-    cocktailData?.strIngredient3,
-    cocktailData?.strIngredient4,
-    cocktailData?.strIngredient5,
-  ];
 
   // BEHAVIOR
   const handleClick = () => {
@@ -36,10 +29,10 @@ const RandomCocktail: React.FC = () => {
       </Button>
       {cocktailData && (
         <CocktailCard
-          name={cocktailData?.strDrink}
-          ingredients={ingredients}
-          instructions={cocktailData?.strInstructions}
-          image={cocktailData?.strDrinkThumb}
+          name={cocktailData?.name}
+          ingredients={cocktailData?.ingredients}
+          instructions={cocktailData?.instructions}
+          image={cocktailData?.thumb}
         />
       )}
     </Stack>

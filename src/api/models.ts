@@ -1,28 +1,26 @@
 export interface ICocktailModel {
-  [key: string]: string;
-
-  idDrink: string;
-  strDrink: string;
+  idDrink: string; // ✔️ → convert to ICocktail (new naming = id)
+  strDrink: string; // ✔️ → convert to ICocktail (new naming = name)
   strDrinkAlternate: string;
   strTags: string;
   strVideo: string;
   strCategory: string;
   strIBA: string;
-  strAlcoholic: string;
+  strAlcoholic: string; // ✔️ → convert to ICocktail (new naming = alcoholic)
   strGlass: string;
-  strInstructions: string;
+  strInstructions: string; // ✔️ → convert to ICocktail (new naming = instruction)
   strInstructionsES: string;
   strInstructionsDE: string;
   strInstructionsFR: string;
   strInstructionsIT: string;
-  strInstructionsZH_HANS: string;
-  strInstructionsZH_HANT: string;
-  strDrinkThumb: string;
-  strIngredient1: string;
+  ["strInstructionsZH-HANS"]: string;
+  ["strInstructionsZH-HANT"]: string;
+  strDrinkThumb: string; // ✔️ → convert to ICocktail (new naming = thumb)
+  strIngredient1: string; // ✔️ → convert to ICocktail (new naming = ingredients: Array<string>
   strIngredient2: string;
   strIngredient3: string;
   strIngredient4: string;
-  strIngredient5: string;
+  strIngredient5: string; // )
   strIngredient6: string;
   strIngredient7: string;
   strIngredient8: string;
@@ -55,5 +53,5 @@ export interface ICocktailModel {
 }
 
 export interface ICocktailListModel {
-  drink: ICocktailModel[];
+  drinks: ICocktailModel[];
 }
