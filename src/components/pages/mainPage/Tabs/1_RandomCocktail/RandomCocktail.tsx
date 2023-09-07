@@ -20,7 +20,7 @@ const RandomCocktail: React.FC = () => {
     dispatch(fetchRandomCocktail());
   };
 
-  // UI
+  // JSX
   return (
     <Stack direction={"column"} alignItems="center" spacing={4}>
       <Typography variant="body1">En panne d'inspiration ?</Typography>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Card, Stack, Typography } from "@mui/material";
+import { Card, Stack, Typography } from "@mui/material";
 
 interface ICocktailCardProps {
   name: string;
@@ -20,8 +20,8 @@ const CocktailCard: React.FC<ICocktailCardProps> = ({
         <Stack alignItems="center" spacing={1}>
           <Typography variant="h5">{name}</Typography>
           <Typography variant="h5">Ingrédients:</Typography>
-          {ingredients.map((ingredient, index) => (
-            <Typography key={index}>{ingredient}</Typography>
+          {ingredients.map((ingredient) => (
+            <Typography key={ingredient}>{ingredient}</Typography>
           ))}
           <Typography variant="h5">Instructions:</Typography>
           {instructions}

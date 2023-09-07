@@ -16,7 +16,7 @@ const FindCocktail: React.FC = () => {
   // STATE
   const [ingredients, setIngredients] = useState(null);
 
-  // UI
+  // JSX
   return (
     <Stack direction={"column"} alignItems="center" spacing={4}>
       <Typography variant="body1">
