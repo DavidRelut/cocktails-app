@@ -1,5 +1,5 @@
-import { ICocktailModel } from "../api/models";
-import { ICocktail } from "../redux/slices/cocktail/cocktailTypes";
+import { ICocktailModel } from "../../../../api/models";
+import { ICocktail } from "../cocktailTypes";
 
 export const convertModelToCocktailType = (
   cocktail: ICocktailModel
