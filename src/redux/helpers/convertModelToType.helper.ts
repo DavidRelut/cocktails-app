@@ -1,5 +1,5 @@
-import { ICocktailModel } from "../../../api/models";
-import { ICocktail } from "../cocktail/cocktailTypes";
+import { ICocktailModel } from "../../api/models";
+import { ICocktail } from "../slices/cocktail/cocktailTypes";
 
 export const convertModelToCocktailType = (
   cocktail: ICocktailModel
