@@ -1,5 +1,5 @@
 export const ETab = {
-  INDEX: 0,
+  INDEX: 1,
 };
 
 /**

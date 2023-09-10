@@ -1,11 +1,7 @@
 import { Stack, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
-import {
-  getTabSelected,
-  tabsConfig,
-} from "../../../utils/config/tabsConfig.util";
+import { ITab, getTabSelected, tabsConfig } from "./helpers/tabsConfig.helper";
 import { ETab } from "../../../enums/enums";
-import { ITab } from "../../../interfaces/interfaces";
 
 const MainPage: React.FC = () => {
   // STATE
@@ -29,7 +25,12 @@ const MainPage: React.FC = () => {
 
       <Tabs value={currentTabSelected} onChange={selectedTab} centered>
         {tabs.map((tab) => (
-          <Tab label={tab.label} value={tab.index} key={tab.index} />
+          <Tab
+            label={tab.label}
+            value={tab.index}
+            key={tab.index}
+            sx={{ "&:focus": { outline: "none" } }}
+          />
         ))}
       </Tabs>
 

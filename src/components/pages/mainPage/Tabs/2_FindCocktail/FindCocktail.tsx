@@ -22,7 +22,11 @@ const FindCocktail: React.FC = () => {
       <Typography variant="body1">
         Entrez les informations pour trouver un cocktail selon vos goûts
       </Typography>
-      <Button variant={"outlined"} color="secondary">
+      <Button
+        variant={"outlined"}
+        color="secondary"
+        sx={{ "&:focus": { outline: "none" } }}
+      >
         Valider
       </Button>
 

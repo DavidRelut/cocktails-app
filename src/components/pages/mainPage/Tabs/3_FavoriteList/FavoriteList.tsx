@@ -16,7 +16,11 @@ const FavoriteList: React.FC = () => {
         <Stack direction={"row"} spacing={2}>
           {/* TODO: Show list of favorite cocktails */}
         </Stack>
-        <Button variant="outlined" onClick={showIngredientList}>
+        <Button
+          variant="outlined"
+          onClick={showIngredientList}
+          sx={{ "&:focus": { outline: "none" } }}
+        >
           Obtenir la liste des ingrédients à acheter
         </Button>
         <Stack direction={"column"}>

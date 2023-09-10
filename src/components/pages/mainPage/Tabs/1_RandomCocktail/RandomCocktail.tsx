@@ -25,7 +25,12 @@ const RandomCocktail: React.FC = () => {
   return (
     <Stack direction={"column"} alignItems="center" spacing={4}>
       <Typography variant="body1">En panne d'inspiration ?</Typography>
-      <Button variant={"outlined"} color="secondary" onClick={handleClick}>
+      <Button
+        variant={"outlined"}
+        color="secondary"
+        onClick={handleClick}
+        sx={{ "&:focus": { outline: "none" } }}
+      >
         Trouve moi un cocktail
       </Button>
       {cocktailData && (
