@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getRandomCocktail } from "../../../api/thecocktaildbAPI";
 import { ICocktail } from "./cocktailTypes";
 import { ICocktailModel } from "../../../api/models";
-import { convertModelToCocktailType } from "../../../utils/object.util";
+import { convertModelToCocktailType } from "../../helpers/convertModelToType.helper";
 
 export const fetchRandomCocktail = createAsyncThunk(
   "cocktail/fetchRandomCocktail",
