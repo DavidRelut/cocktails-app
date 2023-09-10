@@ -8,6 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import ReusableButton from "../../../../reusable-ui/ReusableButton";
 // import { Cocktail } from "../../redux/slices/cocktails/cocktailTypes";
 // import CocktailCard from "../../reusable-ui/CocktailCard";
 // import { useAppSelector } from "../../../redux/hooks";
@@ -16,19 +17,19 @@ const FindCocktail: React.FC = () => {
   // STATE
   const [ingredients, setIngredients] = useState(null);
 
+  // BEHAVIOR
+  const handleClick = () => {
+    console.log("branché");
+  };
+
   // JSX
   return (
     <Stack direction={"column"} alignItems="center" spacing={4}>
       <Typography variant="body1">
         Entrez les informations pour trouver un cocktail selon vos goûts
       </Typography>
-      <Button
-        variant={"outlined"}
-        color="secondary"
-        sx={{ "&:focus": { outline: "none" } }}
-      >
-        Valider
-      </Button>
+
+      <ReusableButton label={"Valider"} onClick={handleClick} />
 
       {/* List of ingredients */}
       <Stack direction={"row"} alignItems="flex-start" spacing={2}>

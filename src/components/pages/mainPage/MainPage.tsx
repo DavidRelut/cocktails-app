@@ -1,7 +1,7 @@
 import { Stack, Tab, Tabs, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { ITab, getTabSelected, tabsConfig } from "./helpers/tabsConfig.helper";
-import { ETab } from "../../../enums/enums";
+import { ETab } from "../../../enums/tab.enum";
 
 const MainPage: React.FC = () => {
   // STATE

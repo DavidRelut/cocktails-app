@@ -1,7 +1,3 @@
-export const ETab = {
-  INDEX: 1,
-};
-
 /**
  * DON'T CHANGE the ID value below ! Is not an dynamic value.
  * Because we need it
