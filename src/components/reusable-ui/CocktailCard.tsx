@@ -26,8 +26,8 @@ const CocktailCard: React.FC<ICocktailCardProps> = ({
           <Typography variant="h5">{name}</Typography>
 
           <Typography variant="h5">Ingrédients:</Typography>
-          {ingredients.map((ingredient) => (
-            <Typography key={ingredient}>{ingredient}</Typography>
+          {ingredients.map((ingredient, index) => (
+            <Typography key={index}>{ingredient}</Typography>
           ))}
 
           <Text
